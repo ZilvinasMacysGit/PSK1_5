@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE configuration
+        PUBLIC '-//mybatis.org//DTD Config 3.0//EN' 'http://mybatis.org/dtd/mybatis-3-config.dtd'>
+<configuration>
+    <typeAliases>
+        <typeAlias type='entities.mybatis.models.Student' alias='Student'></typeAlias>
+        <typeAlias type='entities.mybatis.models.Course' alias='Course'></typeAlias>
+        <typeAlias type='entities.mybatis.models.University' alias='University'></typeAlias>
+        <typeAlias type='entities.mybatis.models.StudentCourse' alias='StudentCourse'></typeAlias>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="MANAGED"/>
+            <dataSource type="JNDI">
+                <property name="data_source" value="openejb:Resource/StudentsDataSource"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource='mybatis/StudentMapper.xml'/>
+        <mapper resource='mybatis/CourseMapper.xml'/>
+        <mapper resource='mybatis/UniversityMapper.xml'/>
+        <mapper resource='mybatis/StudentCourseMapper.xml'/>
+    </mappers>
+</configuration>

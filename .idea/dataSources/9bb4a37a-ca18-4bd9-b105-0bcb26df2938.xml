@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="StudentsDB">
+  <database-model serializer="dbm" rdbms="H2" format-version="4.0">
+    <root id="1"/>
+    <database id="2" parent="1" name="STUDENTSDB">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="INFORMATION_SCHEMA"/>
+    <schema id="4" parent="2" name="PUBLIC">
+      <Visible>1</Visible>
+    </schema>
+    <table id="5" parent="4" name="COURSE"/>
+    <table id="6" parent="4" name="STUDENT"/>
+    <table id="7" parent="4" name="STUDENT_COURSE"/>
+    <table id="8" parent="4" name="UNIVERSITY"/>
+    <column id="9" parent="5" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_0D0AC814_DCD0_4DD9_B9F2_CB89F72AE6C2)</DefaultExpression>
+    </column>
+    <column id="10" parent="5" name="NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(50)|12</DataType>
+    </column>
+    <column id="11" parent="5" name="OPT_LOCK_VERSION">
+      <Position>3</Position>
+      <DataType>INTEGER(10)|4</DataType>
+    </column>
+    <key id="12" parent="5" name="CONSTRAINT_7">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="13" parent="6" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_F86D705D_4073_4C3D_BDEE_91EA4C7A7B86)</DefaultExpression>
+    </column>
+    <column id="14" parent="6" name="FIRST_NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <column id="15" parent="6" name="LAST_NAME">
+      <Position>3</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <column id="16" parent="6" name="UNIVERSITY_ID">
+      <Position>4</Position>
+      <DataType>INTEGER(10)|4</DataType>
+    </column>
+    <column id="17" parent="6" name="REGISTRATION_NO">
+      <Position>5</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <column id="18" parent="6" name="OPT_LOCK_VERSION">
+      <Position>6</Position>
+      <DataType>INTEGER(10)|4</DataType>
+    </column>
+    <key id="19" parent="6" name="CONSTRAINT_B">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="20" parent="6" name="CONSTRAINT_BA">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>UNIVERSITY_ID</ColNames>
+      <RefSchemaName>PUBLIC</RefSchemaName>
+      <RefTableName>UNIVERSITY</RefTableName>
+      <RefKeyName>CONSTRAINT_2</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="21" parent="7" name="STUDENT_ID">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="7" name="COURSE_ID">
+      <Position>2</Position>
+      <DataType>INTEGER(10)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="23" parent="7" name="CONSTRAINT_C">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>STUDENT_ID
+COURSE_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="24" parent="7" name="CONSTRAINT_CB">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>STUDENT_ID</ColNames>
+      <RefSchemaName>PUBLIC</RefSchemaName>
+      <RefTableName>STUDENT</RefTableName>
+      <RefKeyName>CONSTRAINT_B</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="25" parent="7" name="CONSTRAINT_CB6">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>COURSE_ID</ColNames>
+      <RefSchemaName>PUBLIC</RefSchemaName>
+      <RefTableName>COURSE</RefTableName>
+      <RefKeyName>CONSTRAINT_7</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="26" parent="8" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_1ED24325_C4BF_470E_9D70_06D16C801695)</DefaultExpression>
+    </column>
+    <column id="27" parent="8" name="TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR(50)|12</DataType>
+    </column>
+    <column id="28" parent="8" name="OPT_LOCK_VERSION">
+      <Position>3</Position>
+      <DataType>INTEGER(10)|4</DataType>
+    </column>
+    <key id="29" parent="8" name="CONSTRAINT_2">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
