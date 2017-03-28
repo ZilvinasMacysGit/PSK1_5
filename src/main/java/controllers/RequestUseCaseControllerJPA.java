@@ -1,4 +1,4 @@
-package services;
+package controllers;
 
 import entities.jpa.models.Course;
 import entities.jpa.models.Student;

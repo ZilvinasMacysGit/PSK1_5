@@ -1,4 +1,4 @@
-package entities.cdi;
+package controllers;
 
 import entities.jpa.dao.CourseDAO;
 import entities.jpa.dao.StudentDAO;

@@ -1,4 +1,4 @@
-package services;
+package controllers;
 
 import entities.mybatis.models.Course;
 import entities.mybatis.models.Student;
